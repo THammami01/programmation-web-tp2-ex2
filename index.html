@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Formulaire d'Inscription</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Tarek Hammami - github.com/THammami01">
+    <link rel="stylesheet" href="./assets/styles/styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Formulaire d'Inscription</h1>
+    </header>
+
+    <form method="POST">
+      <div>
+        <label>CIN:</label>
+        <input type="text" pattern="\d{8}" placeholder="Entrer votre CIN.." />
+      </div>
+
+      <div>
+        <label>Nom:</label>
+        <input
+          type="text"
+          pattern="[A-Z][A-Za-z]*"
+          placeholder="Entrer votre nom.."
+        />
+      </div>
+
+      <div>
+        <label>Prénom:</label>
+        <input
+          type="text"
+          pattern="[A-Z][A-Za-z]*"
+          placeholder="Entrer votre prénom.."
+        />
+      </div>
+
+      <div>
+        <label>Sexe:</label>
+        <div>
+          <div><input type="radio" name="sexe" /> Féminin</div>
+          <div><input type="radio" name="sexe" /> Masculin</div>
+        </div>
+      </div>
+
+      <div>
+        <label>Date de naissance:</label>
+        <input
+          type="date"
+          value="2000-01-01"
+          min="1997-01-01"
+          max="2017-12-31"
+        />
+      </div>
+
+      <div>
+        <label>Email:</label>
+        <input type="email" placeholder="Entrer votre email.." />
+      </div>
+
+      <div>
+        <label>Téléphone:</label>
+        <input type="tel" placeholder="Entrer votre numéro.." />
+      </div>
+
+      <div>
+        <label>Photo:</label>
+        <input type="file" />
+      </div>
+
+      <div>
+        <label>Bac:</label>
+        <div class="bac">
+          <div><input type="checkbox" /> Maths</div>
+          <div><input type="checkbox" /> Sciences</div>
+          <div><input type="checkbox" /> Techniques</div>
+          <div><input type="checkbox" /> Informatiques</div>
+        </div>
+      </div>
+
+      <div>
+        <label>Nombre de redoublements (Bac):</label>
+        <div>0 <input type="range" value="0" min="0" max="3" step="1" /> 3</div>
+      </div>
+
+      <div>
+        <label>Informations supplémentaires:</label>
+        <textarea></textarea>
+      </div>
+
+      <div class="btns">
+        <input type="submit" value="Envoyer" />
+        <input type="reset" value="Annuler" />
+      </div>
+    </form>
+
+    <script>
+      document.querySelector("form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        window.scrollTo(0, 0);
+      });
+
+      document.querySelector("[type=reset]").addEventListener("click", (e) => {
+        window.scrollTo(0, 0);
+      });
+    </script>
+  </body>
+</html>
